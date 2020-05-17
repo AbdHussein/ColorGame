@@ -4,19 +4,21 @@ var squares =$(".square");
 var displaycolors = $("#colorDisplay");
 var messgDisplay = $("#message");
 var reset = $("#reset");
-
-var colors = generateRandomColors(numOfsquares);
-var trueColor = colors[Math.floor(Math.random()*colors.length)];
-header.text(trueColor);
-
-reset.click(function(){
+//---------------
+reset.click(function(){	
+	location.reload();
 	init();
+	reset.text('New colors');
+	messgDisplay.text('');	
 });
 
 init();
 function init(){	
+	var colors = generateRandomColors(numOfsquares);
+	var trueColor = colors[Math.floor(Math.random()*colors.length)];
+	displaycolors.text(trueColor);
 	fillSquares(colors);
-	setupSquares();
+	setupSquares(trueColor);
 	//reset();
 }
 
@@ -24,7 +26,7 @@ function generateColor() {
 	var red = Math.floor(Math.random()*255);
 	var green = Math.floor(Math.random()*255);
 	var blue = Math.floor(Math.random()*255);
-	var rgb = "rgb("+red+","+green+","+blue+")";	
+	var rgb = "rgb("+red+", "+green+", "+blue+")";	
 	return rgb;
 }
 
@@ -42,14 +44,18 @@ function fillSquares(colors){
 	}	
 }
 
-function setupSquares(){
-	for(var i =0 ; i <squares.length ; i++){
+function setupSquares(trueColor){
+	for(var i =0 ; i < squares.length ; i++){
 		squares[i].addEventListener("click",function(event){
-			var clickedColor = $(event.target).css('background');
-			console.log(clickedColor);			
+			var clickedColor = $(event.target).css('background-color');								
 			if(clickedColor === trueColor){
+				console.log('Correct');				
 				messgDisplay.text("Correct!");
-				reset.text("Play again!");				
+				messgDisplay.css({'color':'white'})
+				reset.text("Play again?");	
+				for(var i =0 ; i < squares.length ; i++){
+					squares[i].style.background = clickedColor;
+				}			
 			}
 			else{
 				$(event.target).css('background','white');
