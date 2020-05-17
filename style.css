@@ -2,8 +2,12 @@ body{
 	text-align: center;
 }
 header{
-	max-width: 100%;
-	background-color:blue;
-	height:100px;
-	
-	}
+	text-align: center;
+	line-height: 1.1;
+	font-weight: normal;
+	color: white;
+	background: steelblue;
+	margin: 0;
+	text-transform: uppercase;
+	padding: 20px 0;
+}
