@@ -18,8 +18,7 @@ function init(){
 	var trueColor = colors[Math.floor(Math.random()*colors.length)];
 	displaycolors.text(trueColor);
 	fillSquares(colors);
-	setupSquares(trueColor);
-	//reset();
+	setupSquares(trueColor);	
 }
 
 function generateColor() {
