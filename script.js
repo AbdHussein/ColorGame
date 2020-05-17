@@ -16,7 +16,7 @@ init();
 function init(){	
 	var colors = generateRandomColors(numOfsquares);
 	var trueColor = colors[Math.floor(Math.random()*colors.length)];
-	displaycolors.text(trueColor);
+	displaycolors.text(trueColor);//rgb;
 	fillSquares(colors);
 	setupSquares(trueColor);	
 }
@@ -45,10 +45,9 @@ function fillSquares(colors){
 
 function setupSquares(trueColor){
 	for(var i =0 ; i < squares.length ; i++){
-		squares[i].addEventListener("click",function(event){
-			var clickedColor = $(event.target).css('background-color');								
-			if(clickedColor === trueColor){
-				console.log('Correct');				
+		squares[i].addEventListener("click",function(){
+			var clickedColor = $(this).css('background-color');								
+			if(clickedColor === trueColor){		
 				messgDisplay.text("Correct!");
 				messgDisplay.css({'color':'white'})
 				reset.text("Play again?");	
@@ -57,7 +56,7 @@ function setupSquares(trueColor){
 				}			
 			}
 			else{
-				$(event.target).css('background','white');
+				$(this).css('background','white');
 				messgDisplay.text("Try again!");
 				messgDisplay.css('color','white');
 			}
