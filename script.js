@@ -1,6 +1,6 @@
-var header = $("#main");
+var header = $("#colorDisplay");
 
-function color() {
+function generateColor() {
 	var red = Math.floor(Math.random()*255)
 	var green = Math.floor(Math.random()*255)
 	var blue = Math.floor(Math.random()*255)
@@ -8,3 +8,4 @@ function color() {
 	return rgb;
 }
 
+header.text(generateColor()); 
