@@ -8,4 +8,3 @@ function color() {
 	return rgb;
 }
 
-header.css({"background-color":color(),"height":"50px"})
