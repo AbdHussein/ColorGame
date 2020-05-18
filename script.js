@@ -1,21 +1,17 @@
 var numOfsquares = 6;
-var squares =$(".square");
-var displaycolors = $("#colorDisplay");
+var squares =$(".square"); 
 var messgDisplay = $("#message");
 var reset = $("#reset");
 
 reset.click(function(){	
-	location.reload();
-	init();
-	reset.text('New colors');
-	messgDisplay.text('');	
+	location.reload();		
 });
 
 init();
 function init(){	
 	var colors = generateRandomColors(numOfsquares);
 	var trueColor = colors[Math.floor(Math.random()*colors.length)];
-	displaycolors.text(trueColor);//rgb;
+	$("#colorDisplay").text(trueColor);//rgb;
 	fillSquares(colors);
 	setupSquares(trueColor);	
 }
@@ -27,7 +23,7 @@ function generateColor() {
 	var rgb = "rgb("+red+", "+green+", "+blue+")";	
 	return rgb;
 }
-//Add num of color in array
+//Add num of colors in array
 function generateRandomColors(num){	
 	var arr = [];
 	for(var i = 0; i < num; i++){
