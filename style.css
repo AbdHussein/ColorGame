@@ -16,7 +16,7 @@ body {
 
 #container {
 	margin: 20px auto;
-	max-width: 600px;
+	max-width: 50%;
 }
 
 h1 {
@@ -37,6 +37,7 @@ h1 {
 #message {
 	display: inline-block;
 	width: 20%;
+	font-size: 18px;
 }
 
 #stripe {
@@ -52,14 +53,14 @@ h1 {
 }
 
 button {
-	border: none;
-	background: none;
+	border: outset 2px;
+	background: white;
 	text-transform: uppercase;
 	height: 100%;
 	font-weight: 700;
 	color: steelblue;
-	letter-spacing: 1px;
-	font-size: inherit;
+	letter-spacing: 2px;
+	font-size: 20px;
 	transition: all 0.3s;	
 	outline: none;
 }
