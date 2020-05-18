@@ -43,10 +43,12 @@ function setupSquares(trueColor){
 	for(var i =0 ; i < squares.length ; i++){
 		squares[i].addEventListener("click",function(){
 			var clickedColor = $(this).css('background-color');								
-			if(clickedColor === trueColor){		
+			if(clickedColor === trueColor){	
+					
 				messgDisplay.text("Correct!");
 				messgDisplay.css({'color':'yellow',"font-size":"20px"})
 				reset.text("Play again?");	
+
 				for(var i =0 ; i < squares.length ; i++){
 					$(squares[i]).css({'background-color': clickedColor});
 				}			
