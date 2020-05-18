@@ -38,7 +38,8 @@ function generateRandomColors(num){
 //take each div color from array
 function fillSquares(colors){
 	for(var i = 0; i < colors.length; i++){
-		squares[i].style.background = colors[i];
+		//squares[i].style.background = colors[i];
+		$(squares[i]).css({'background-color': colors[i]});
 	}	
 }
 //compare if display color equal any div color
@@ -51,13 +52,13 @@ function setupSquares(trueColor){
 				messgDisplay.css({'color':'yellow',"font-size":"20px"})
 				reset.text("Play again?");	
 				for(var i =0 ; i < squares.length ; i++){
-					squares[i].style.background = clickedColor;
+					$(squares[i]).css({'background-color': clickedColor});
 				}			
 			}
 			else{
 				$(this).css('background','white');
 				messgDisplay.text("Try again!");
-				messgDisplay.css({"color":"red","font-size":"20px"});
+				messgDisplay.css({"color":"red", "font-size":"20px"});
 			}
 		})
 	}
